@@ -1,5 +1,5 @@
 body{
-    background: #090909;
+    background: #1a1a1a;
 }
 
 .bg-black {
@@ -11,4 +11,11 @@ height: 100%;
 .card-project:hover {
     border: 1px solid #fff;
     cursor:pointer;
+}
+.navbar-nav {
+  justify-content: center;
+  width: 100%;
+}
+.letra {
+  font-size: 1.2rem;
 }

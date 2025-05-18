@@ -1,48 +1,112 @@
 {% extends 'layout.html' %}
 {% block content %}
+{% load custom_filters %}
 
 {% load static %}
-<header class="row bg-black">
+<header class="row bg-black rounded-2">
     <div class="col-md-4 d-flex justify-content-center align-items-center">
 
-        <img class="img-fluid" src="{% static 'portfolio/perfil.png' %}" alt="" style="width: 250px; height: auto;">
+        <img class="img-fluid rounded-2" src="{% static 'portfolio/perfil3.png' %}" alt=""
+            style="width: 200px; height: auto;">
 
     </div>
     <div class="col-md-8 my-auto">
-        <h1>Yo soy <strong>Miguel Ojeda</strong></h1>
-        <h3>yo soy un FullStack developer</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque laudantium aspernatur deleniti placeat a,
-            eius dolore natus asperiores ut, esse, modi at harum explicabo sunt? In sint sed consectetur qui
-            reprehenderit magnam itaque corporis voluptates quis ipsum unde ab iste provident vero veniam ipsa debitis,
-            assumenda eaque? Odio, tempora! Adipisci eligendi rem quae, placeat atque hic eius odit officia modi
-            praesentium assumenda iure minus. Inventore quod facere beatae. Vitae voluptates cumque obcaecati,
-            perferendis qui architecto labore quasi. Sapiente saepe, at ea fugit aspernatur, quod ut labore dolorum
-            consequatur harum blanditiis odit quis autem. Iusto ducimus sint asperiores dolores, et laudantium?</p>
-        <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3" target="_blank">Download CV </a>
+        <h1><strong>Hola, soy Miguel Ojeda</strong></h1>
+        <h3>FullStack developer</h3>
+        <p class="letra">Desarrollador Full Stack apasionado por la programación web, un recién graduado con sólidos
+            conocimientos en desarrollo front-end y back-end, mi formación académica y mi enfoque en aprender
+            tecnologías de vanguardia me han preparado para abordar desafíos en el desarrollo Full Stack, busco
+            oportunidades para aplicar mis habilidades y conocimientos en un entorno profesional y contribuir al éxito
+            de proyectos web innovadores</p>
+        <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-primary btn-lg rounded-2 my-3 " target="_blank"><i
+                class="fas fa-file-pdf me-2"></i>Download CV </a>
+        <a href="https://www.linkedin.com/in/miguel-ojeda-/" class="btn btn-primary btn-lg rounded-2 my-3 "
+            target="_blank"><i class="fab fa-linkedin me-2"></i>Linkedin </a>
+        <a href="https://github.com/Alejandro959521" class="btn btn-primary btn-lg rounded-2 my-3 " target="_blank"> <i
+                class="fab fa-github me-2"></i>Github </a>
+        <a href="javascript:void(0)" class="btn btn-primary btn-lg rounded-2 my-3 " onclick="copiarCorreo()"><i
+                class="fas fa-envelope me-2"></i>Correo </a>
+        <script>
+            function copiarCorreo() {
+                const correo = "cabrerasm081@gmail.com"; // Reemplaza con tu correo real
+
+                navigator.clipboard.writeText(correo).then(() => {
+                    Swal.fire({
+                        title: '¡Copiado!',
+                        text: `Correo "${correo}" copiado al portapapeles.`,
+                        icon: 'success',
+                        background: '#0d1117',
+                        color: '#58a6ff',
+                        iconColor: '#58a6ff',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        customClass: {
+                            popup: 'border border-primary rounded-3 shadow'
+                        }
+                    });
+                }).catch(() => {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'No se pudo copiar el correo.',
+                        icon: 'error',
+                        background: '#0d1117',
+                        color: '#ff7b72',
+                        iconColor: '#ff7b72',
+                        showConfirmButton: true,
+                        confirmButtonColor: '#58a6ff',
+                        customClass: {
+                            popup: 'border border-danger rounded-3 shadow'
+                        }
+                    });
+                });
+            }
+        </script>
     </div>
 </header>
 
-<div class="row my-4 text-center">
+<div class="my-5 text-center">
 
-    <h3>My projects</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, nobis.</p>
+    <h2 class="text-white fw-bold"> Mis proyectos </h2>
+    <p class="letra text-light">Proyectos desarrollados, aplicando y fortaleciendo mis habilidades en programación</p>
+    <div class="row g-4 mt-4 justify-content-center">
+        {% for project in projects %}
+        <div class="col-lg-6 col-md-10">
 
-    {% for project in projects %}
-    <div class="col-md-4 p-4 h-100">
+            <div class="card bg-dark text-light rounded-4 shadow p-3 h-100">
 
-        <div class="card bg-black card-project text-white">
-            <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top">
-            <div class="card-body">
-                <h2>{{project.title}}</h2>
-                <p>{{project.description}}</p>
+                <img src="{{ project.image.url }}" class="card-img-top rounded-3 border border-primary"
+                    alt="{{ project.title }}">
+                <div class="card-body text-start">
+                    <h4 class="text-warning fw-bold">{{ project.title }}</h4>
+                    <p>{{ project.description }}</p>
+                    {% for tech in project.technologies|split_technologies %}
+                    <span class="badge bg-primary me-1">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+
                 {% if project.url %}
-                <a class="btn btn-light rounded-0 btn-sm" target="_blank" href="{{project.url}}">{{project.url}}</a>
+                <a href="{{ project.url }}" target="_blank" class="btn btn-outline-info btn-sm rounded-2">
+                    <i class="fas fa-link me-1"></i> Ver proyecto
+                </a>
 
                 {%endif%}
             </div>
         </div>
     </div>
+</div>
+{% endfor %}
+</div>
 
-    {% endfor %}
+
+</div>
+
+<div class="row my-4 text-center">
+
+    <h3>Skills</h3>
+
+</div>
+<div class="row my-4 text-center">
+
+    <h3>Contact</h3>
     {% endblock %}
 </div>
