@@ -7,4 +7,5 @@ class Project(models.Model):
     description =TextField()  #
     image = ImageField(upload_to='portfolio/images/')
     url = URLField(blank=True)
+    url2 = URLField(blank=True)
     technologies = CharField(max_length=255, blank=True)  

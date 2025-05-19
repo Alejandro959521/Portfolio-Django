@@ -17,7 +17,7 @@
             conocimientos en desarrollo front-end y back-end, mi formación académica y mi enfoque en aprender
             tecnologías de vanguardia me han preparado para abordar desafíos en el desarrollo Full Stack, busco
             oportunidades para aplicar mis habilidades y conocimientos en un entorno profesional y contribuir al éxito
-            de proyectos web innovadores</p>
+            de proyectos web de calidad.</p>
         <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-primary btn-lg rounded-2 my-3 " target="_blank"><i
                 class="fas fa-file-pdf me-2"></i>Download CV </a>
         <a href="https://www.linkedin.com/in/miguel-ojeda-/" class="btn btn-primary btn-lg rounded-2 my-3 "
@@ -65,44 +65,190 @@
 </header>
 
 <div class="my-5 text-center">
-
-    <h2 class="text-white fw-bold"> Mis proyectos </h2>
+    <h2 class="text-white fw-bold">Mis proyectos</h2>
     <p class="letra text-light">Proyectos desarrollados, aplicando y fortaleciendo mis habilidades en programación</p>
-    <div class="row g-4 mt-4 justify-content-center">
+
+    <div class="row g-4 mt-4 justify-content-around ">
         {% for project in projects %}
-        <div class="col-lg-6 col-md-10">
-
+        <div class="">
             <div class="card bg-dark text-light rounded-4 shadow p-3 h-100">
+                <div class="row g-0 align-items-center">
+                    <!-- Imagen a la izquierda -->
+                    <div class="col-md-7">
+                        <img src="{{ project.image.url }}" class="img-fluid rounded-3 border border-primary"
+                            alt="{{ project.title }}">
+                    </div>
 
-                <img src="{{ project.image.url }}" class="card-img-top rounded-3 border border-primary"
-                    alt="{{ project.title }}">
-                <div class="card-body text-start">
-                    <h4 class="text-warning fw-bold">{{ project.title }}</h4>
-                    <p>{{ project.description }}</p>
-                    {% for tech in project.technologies|split_technologies %}
-                    <span class="badge bg-primary me-1">{{ tech }}</span>
-                    {% endfor %}
+                    <!-- Contenido a la derecha -->
+                    <div class="col-md-5">
+                        <div class="card-body text-start">
+                            <h4 class="text-warning fw-bold">{{ project.title }}</h4>
+                            <p>{{ project.description }}</p>
+                            {% for tech in project.technologies|split_technologies %}
+                            <span class="badge bg-primary me-1">{{ tech }}</span>
+                            {% endfor %}
+
+                            {% if project.url %}
+                            <div class="mt-3">
+                                <a href="{{ project.url }}" target="_blank"
+                                    class="btn btn-outline-info btn-sm rounded-2">
+                                    <i class="fas fa-link me-1"></i> Ver proyecto
+                                </a>
+                                <a href="{{ project.url2 }}" target="_blank"
+                                    class="btn btn-outline-info btn-sm rounded-2">
+                                    <i class="fab fa-github me-2"></i> Ver Codigo
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
-
-                {% if project.url %}
-                <a href="{{ project.url }}" target="_blank" class="btn btn-outline-info btn-sm rounded-2">
-                    <i class="fas fa-link me-1"></i> Ver proyecto
-                </a>
-
-                {%endif%}
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
-{% endfor %}
-</div>
 
-
-</div>
 
 <div class="row my-4 text-center">
 
-    <h3>Skills</h3>
+    <section class="my-2 text-center">
+        <h2 class="text-white fw-bold">Skills</h2>
+        <p class="letra text-light">Tecnologías que domino</p>
+
+        <div class="row mt-4 justify-content-center">
+            {% comment %} Aquí puedes usar una lista de skills si la tienes en el contexto {% endcomment %}
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/html.png' %}" alt="HTML" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">HTML</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/css.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">CSS</div>
+                </div>
+            </div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/js.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">javascript</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/node.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">Node.js</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/express.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">Express.js</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/postgre.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">PostgreSQL</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/react.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">React.js</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/sequelize.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">sequelize,js</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/tailwind.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">Tailwind.css</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/flask.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">Flask</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/Boostrap.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">Boostrap</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/django.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">Django</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/python.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">Python</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/webpack.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">Webpack</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/vite.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">Vite</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/jwt.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">JWT</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/docker.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">docker</div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="{% static 'portfolio/git.png' %}" alt="CSS" class="img-fluid"
+                        style="height: 50px; margin: auto;">
+                    <div class="mt-2">Git</div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
 
 </div>
 <div class="row my-4 text-center">
