@@ -3,28 +3,31 @@
 {% load custom_filters %}
 
 {% load static %}
-<header class="row bg-black rounded-2">
-    <div class="col-md-4 d-flex justify-content-center align-items-center">
+
+<header class="row bg-black rounded-2 p-3">
+  
+    <div class="col-md-4 d-flex justify-content-center align-items-center  mb-4 mb-md-0">
 
         <img class="img-fluid rounded-2" src="{% static 'portfolio/perfil3.png' %}" alt=""
-            style="width: 200px; height: auto;">
+           style="max-width: 200px;">
 
     </div>
-    <div class="col-md-8 my-auto">
-        <h1><strong>Hola, soy Miguel Ojeda</strong></h1>
-        <h3>FullStack developer</h3>
+    <div class="col-md-8 my-auto text-center text-md-start">
+        <h1 class="display-4 display-md-3"><strong>Hola, soy Miguel Ojeda</strong></h1>
+        <h3 class="">FullStack developer</h3>
+        <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mt-3">
         <p class="letra">Desarrollador Full Stack apasionado por la programación web, un recién graduado con sólidos
             conocimientos en desarrollo front-end y back-end, mi formación académica y mi enfoque en aprender
             tecnologías de vanguardia me han preparado para abordar desafíos en el desarrollo Full Stack, busco
             oportunidades para aplicar mis habilidades y conocimientos en un entorno profesional y contribuir al éxito
             de proyectos web de calidad.</p>
-        <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-primary btn-lg rounded-2 my-3 " target="_blank"><i
+        <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-primary btn-lg rounded-2 my-1" target="_blank"><i
                 class="fas fa-file-pdf me-2"></i>Download CV </a>
-        <a href="https://www.linkedin.com/in/miguel-ojeda-/" class="btn btn-primary btn-lg rounded-2 my-3 "
+        <a href="https://www.linkedin.com/in/miguel-ojeda-/" class="btn btn-primary btn-lg rounded-2 my-1"
             target="_blank"><i class="fab fa-linkedin me-2"></i>Linkedin </a>
-        <a href="https://github.com/Alejandro959521" class="btn btn-primary btn-lg rounded-2 my-3 " target="_blank"> <i
+        <a href="https://github.com/Alejandro959521" class="btn btn-primary btn-lg rounded-2 my-1" target="_blank"> <i
                 class="fab fa-github me-2"></i>Github </a>
-        <a href="javascript:void(0)" class="btn btn-primary btn-lg rounded-2 my-3 " onclick="copiarCorreo()"><i
+        <a href="javascript:void(0)" class="btn btn-primary btn-lg rounded-2 my-1" onclick="copiarCorreo()"><i
                 class="fas fa-envelope me-2"></i>Correo </a>
         <script>
             function copiarCorreo() {
@@ -62,9 +65,11 @@
             }
         </script>
     </div>
+    </div>
 </header>
 
-<div class="my-5 text-center">
+<section id="proyectos" class="py-5">
+<div class="my-2 text-center">
     <h2 class="text-white fw-bold">Mis proyectos</h2>
     <p class="letra text-light">Proyectos desarrollados, aplicando y fortaleciendo mis habilidades en programación</p>
 
@@ -108,12 +113,18 @@
         {% endfor %}
     </div>
 </div>
-
+</section>
 
 <div class="row my-4 text-center">
 
+    <h3>agregar proyectos basicos despues de este varios en una sola imagen y se explica que son</h3>
+   
+</div>
+<section id="skills" >
+<div class="row my-2 text-center">
+
     <section class="my-2 text-center">
-        <h2 class="text-white fw-bold">Skills</h2>
+        <h2 class="text-white fw-bold ">Skills</h2>
         <p class="letra text-light">Tecnologías que domino</p>
 
         <div class="row mt-4 justify-content-center">
@@ -249,10 +260,6 @@
             
         </div>
     </section>
-
+ {% endblock %}
 </div>
-<div class="row my-4 text-center">
-
-    <h3>Contact</h3>
-    {% endblock %}
-</div>
+</section>
