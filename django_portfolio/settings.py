@@ -139,6 +139,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE =  "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','https://portfolio-django-production-5c7e.up.railway.app/']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','portfolio-django-production-5c7e.up.railway.app']
 
-CSRF_TRUSTED_ORIGINS = [ 'https://portfolio-django-production-5c7e.up.railway.app/' ]
+CSRF_TRUSTED_ORIGINS = [ 'https://portfolio-django-production-5c7e.up.railway.app' ]
