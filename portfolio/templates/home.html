@@ -21,7 +21,7 @@
                 oportunidades para aplicar mis habilidades y conocimientos en un entorno profesional y contribuir al
                 éxito
                 de proyectos web de calidad.</p>
-            <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-primary btn-lg rounded-2 my-1" target="_blank"><i
+            <a href="{% static 'portfolio/cv2Ingles.pdf' %}" class="btn btn-primary btn-lg rounded-2 my-1" target="_blank"><i
                     class="fas fa-file-pdf me-2"></i>Download CV </a>
             <a href="https://www.linkedin.com/in/miguel-ojeda-/" class="btn btn-primary btn-lg rounded-2 my-1"
                 target="_blank"><i class="fab fa-linkedin me-2"></i>Linkedin </a>
@@ -68,7 +68,7 @@
     </div>
 </header>
 
-<section id="proyectos" class="py-5">
+<section id="proyectos" class="py-2">
     <div class="my-2 text-center">
         <h2 class="text-white fw-bold">Mis proyectos</h2>
         <p class="letra text-light">Proyectos desarrollados, aplicando y fortaleciendo mis habilidades en programación
@@ -116,147 +116,9 @@
     </div>
 </section>
 
+{% include 'partials/skills.html' %}
 
-<section id="skills">
-    <div class="row my-2 text-center">
-
-        <section class="my-2 text-center">
-            <h2 class="text-white fw-bold ">Habilidades</h2>
-            <p class="letra text-light">Tecnologías que domino</p>
-
-            <div class="row mt-4 justify-content-center">
-                {% comment %} Aquí puedes usar una lista de skills si la tienes en el contexto {% endcomment %}
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                        <img src="{% static 'portfolio/html.png' %}" alt="HTML" class="img-fluid"
-                            style="height: 50px; margin: auto;">
-                        <div class="mt-2">HTML</div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                        <img src="{% static 'portfolio/css.png' %}" alt="CSS" class="img-fluid"
-                            style="height: 50px; margin: auto;">
-                        <div class="mt-2">CSS</div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                        <img src="{% static 'portfolio/js.png' %}" alt="CSS" class="img-fluid"
-                            style="height: 50px; margin: auto;">
-                        <div class="mt-2">javascript</div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                        <img src="{% static 'portfolio/node.png' %}" alt="CSS" class="img-fluid"
-                            style="height: 50px; margin: auto;">
-                        <div class="mt-2">Node.js</div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                        <img src="{% static 'portfolio/express.png' %}" alt="CSS" class="img-fluid"
-                            style="height: 50px; margin: auto;">
-                        <div class="mt-2">Express.js</div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                        <img src="{% static 'portfolio/postgre.png' %}" alt="CSS" class="img-fluid"
-                            style="height: 50px; margin: auto;">
-                        <div class="mt-2">PostgreSQL</div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                        <img src="{% static 'portfolio/react.png' %}" alt="CSS" class="img-fluid"
-                            style="height: 50px; margin: auto;">
-                        <div class="mt-2">React.js</div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                        <img src="{% static 'portfolio/sequelize.png' %}" alt="CSS" class="img-fluid"
-                            style="height: 50px; margin: auto;">
-                        <div class="mt-2">sequelize,js</div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                        <img src="{% static 'portfolio/tailwind.png' %}" alt="CSS" class="img-fluid"
-                            style="height: 50px; margin: auto;">
-                        <div class="mt-2">Tailwind.css</div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                        <img src="{% static 'portfolio/flask.png' %}" alt="CSS" class="img-fluid"
-                            style="height: 50px; margin: auto;">
-                        <div class="mt-2">Flask</div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                        <img src="{% static 'portfolio/boostrap.png' %}" alt="CSS" class="img-fluid"
-                            style="height: 50px; margin: auto;">
-                        <div class="mt-2">Boostrap</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                    <img src="{% static 'portfolio/python.png' %}" alt="CSS" class="img-fluid"
-                        style="height: 50px; margin: auto;">
-                    <div class="mt-2">Python</div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                    <img src="{% static 'portfolio/webpack.png' %}" alt="CSS" class="img-fluid"
-                        style="height: 50px; margin: auto;">
-                    <div class="mt-2">Webpack</div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                    <img src="{% static 'portfolio/vite.png' %}" alt="CSS" class="img-fluid"
-                        style="height: 50px; margin: auto;">
-                    <div class="mt-2">Vite</div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                    <img src="{% static 'portfolio/jwt.png' %}" alt="CSS" class="img-fluid"
-                        style="height: 50px; margin: auto;">
-                    <div class="mt-2">JWT</div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                    <img src="{% static 'portfolio/docker.png' %}" alt="CSS" class="img-fluid"
-                        style="height: 50px; margin: auto;">
-                    <div class="mt-2">docker</div>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                <div class="card bg-dark text-white p-2 rounded-3 shadow-sm h-100">
-                    <img src="{% static 'portfolio/git.png' %}" alt="CSS" class="img-fluid"
-                        style="height: 50px; margin: auto;">
-                    <div class="mt-2">Git</div>
-                </div>
-            </div>
-
-    </div>
-</section>
-
-</div>
-</section>
-
-
-<section id="contactame" class="py-5">
+<section id="contactame" class="py-2">
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="contact-card p-4 p-md-5">
